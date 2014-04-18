@@ -147,7 +147,7 @@ class Service
   private
 
   def internal_run
-    callback(:denied) and return unless @policy.permit?
+    return callback(:denied) unless @policy.permit?
     if @persistor.persist
       callback :created
     else
