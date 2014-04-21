@@ -7,7 +7,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-I recently read the POODR book. In it Sandi Metz talks about verifying incoming and outgoing messages of the public interface of the object being tested.
+I recently read the [POODR](http://www.poodr.com/) book. In it Sandi Metz talks about verifying incoming and outgoing messages of the public interface of the object being tested.
 
 Its the Interface part that I want to focus on.
 
