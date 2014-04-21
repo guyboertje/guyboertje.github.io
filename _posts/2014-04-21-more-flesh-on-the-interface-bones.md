@@ -90,4 +90,4 @@ However, in the previous post I said that the spec would be immune to the detail
   expect(discount_rule).to have_correctly_invoked_permits
 {% endhighlight %}
 
-What if [Reek](https://github.com/troessner/reek/wiki) or [Rubocop](http://batsov.com/rubocop/) could be extended to warn for cases where an Interface has been included but not fully implemented.
+What if [Reek](https://github.com/troessner/reek/wiki) or [Rubocop](http://batsov.com/rubocop/) could be extended to warn for cases where an Interface has been included but not fully implemented?
