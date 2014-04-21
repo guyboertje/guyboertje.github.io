@@ -2,8 +2,8 @@
 layout: post
 title: "Unit testing, POODR and collaborator interactions"
 description: ""
-category: 
-tags: []
+category: ruby
+tags: [testing, interface, dependency]
 ---
 {% include JB/setup %}
 

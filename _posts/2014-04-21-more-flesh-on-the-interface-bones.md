@@ -2,8 +2,8 @@
 layout: post
 title: "More flesh on the Interface bones"
 description: ""
-category: 
-tags: []
+category: ruby
+tags: [testing, interface, dependency]
 ---
 {% include JB/setup %}
 
