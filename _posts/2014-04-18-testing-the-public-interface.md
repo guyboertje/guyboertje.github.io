@@ -19,7 +19,7 @@ The methods invoked are the API of each object
 
 We want to create a test for the Action object
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 describe Action do
   context 'unit test using a mock' do
     before do
@@ -43,7 +43,7 @@ However there is a way to construct the spec to be immune to the API method name
 
 Consider this spec
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 describe Action do
   context 'unit test using a substitute implementation of the interface' do
     before do
@@ -62,7 +62,7 @@ end
 
 If we define a module that represents the interface e.g. Runnable.rb
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 module Runnable
   def run(*args, &block)
     internal_run(*args, &block)
@@ -80,7 +80,7 @@ end
 
 Then we include this in any class that can be injected into the Action initializer. Perhaps we have a SubscribeService and an UnsubscribeService, but we also include this in our SpecHelpers::ActionService class too.  By overriding the method internal_run (you can call this method anything you want) in all included classes, they can be said to implement the interface.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 module SpecHelpers
   class ActionService
     include Runnable
@@ -91,7 +91,7 @@ end
 
 and
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class Service
   include Runnable
 
@@ -107,7 +107,7 @@ The default implementation of internal_run in the module sets the ivar @invoked_
 
 Or you could alse have a module just for testing that provides the invoked_correctly? method
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 module SpecHelpers::InvokedCorrectly
   def invoked_correctly?()
     !!@invoked_correctly
@@ -117,7 +117,7 @@ end
 
 then the SpecHelpers::ActionService would be
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 module SpecHelpers
   class ActionService
     include Runnable
@@ -131,7 +131,7 @@ So if any aspect of the interface definition changed, as long as you you also ch
 Does this seem like too much ceremony? Some would say yes; I say no - but it works best if you always pass the dependancies into the class somehow.
 
 so the the Service class might look like this
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class Service
   include Runnable
   include Callbackable
