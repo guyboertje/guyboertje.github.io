@@ -11,7 +11,7 @@ I discovered, when preparing for a diffent post, that defining interfaces can be
 
 One can subclass Module and provide a hash of signatures that define an interface...
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class Interface < Module
   def initialize(signatures)
     @signatures = signatures
@@ -41,7 +41,7 @@ end
 
 This means that one can define these Interface mdules like this...
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 module Interfaces
   PermittableInterface = Interface.new(permits?: '')
   ApplicableInterface = Interface.new(applicable?: '*args, &block')
@@ -54,7 +54,7 @@ Note: in the previous post [Unit testing, POODR and collaborator interactions]({
 
 Then, in your test suite, you can define something like this...
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class BasePolicy
   include Interfaces::ApplicableInterface
   def applicable?() super; test_outcome; end
@@ -85,9 +85,9 @@ So rather than specifying mocks for dependencies, you can use real substitute ob
 
 However, in the previous post I said that the spec would be immune to the details of the interface definition but this was naive, instead we get readible matchers...
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
   expect(service).to have_correctly_invoked_run
-  expect(discount_rule).to have_correctly_invoked_permits
+  expect(discount_rule).to have_correctly_invoked_applicable
 {% endhighlight %}
 
 What if [Reek](https://github.com/troessner/reek/wiki) or [Rubocop](http://batsov.com/rubocop/) could be extended to warn for cases where an Interface has been included but not fully implemented?
