@@ -9,7 +9,7 @@ tags: []
 
 I discovered, when preparing for a diffent post, that defining interfaces can be generalised.
 
-One can subclass Module and provide a hash of signatures that define an interface...
+One can subclass Module ([wat?](http://solnic.eu/2012/08/13/subclassing-module-for-fun-and-profit.html)) and provide a hash of signatures that define an interface...
 
 {% highlight ruby %}
 class Interface < Module
