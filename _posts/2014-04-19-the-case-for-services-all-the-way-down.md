@@ -2,8 +2,8 @@
 layout: post
 title: "The case for Services all the way down"
 description: ""
-category: 
-tags: []
+category: ruby
+tags: [services, interface]
 ---
 {% include JB/setup %}
 
