@@ -128,7 +128,7 @@ end
 
 So if any aspect of the interface definition changed, as long as you you also changed the test helper implementations too (they are proper implementations after all) your spec should still pass.
 
-Does this seem like too much ceremony? Some would say yes; I say no - but it works best if you always pass the dependancies into the class somehow.
+Does this seem like too much ceremony? Some would say yes; I say no - but it works best if you always pass the dependencies into the class somehow.
 
 so the the Service class might look like this
 {% highlight ruby %}
