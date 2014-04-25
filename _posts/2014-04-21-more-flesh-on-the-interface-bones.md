@@ -7,7 +7,7 @@ tags: [testing, interface, dependency]
 ---
 {% include JB/setup %}
 
-I discovered, when preparing for a diffent post, that defining interfaces can be generalised.
+I discovered, when preparing for a different post, that defining interfaces can be generalised.
 
 One can subclass Module ([wat?](http://solnic.eu/2012/08/13/subclassing-module-for-fun-and-profit.html)) and provide a hash of signatures that define an interface...
 
@@ -39,7 +39,7 @@ class Interface < Module
 end
 {% endhighlight %}
 
-This means that one can define these Interface mdules like this...
+This means that one can define these Interface modules like this...
 
 {% highlight ruby %}
 module Interfaces
